@@ -147,9 +147,14 @@ public class SobelFilter extends Canvas {
                         + dgy[i + 1][j + 1][2] * Gy[2][2];
 
                 // Get the color magnitude from processing both filters
-                R = (int) sqr1(sq1(xr) + sq1(yr));
-                G = (int) sqr1(sq1(xg) + sq1(yg));
-                B = (int) sqr1(sq1(xb) + sq1(yb));
+                //R = (int) sqr1(sq1(xr) + sq1(yr));
+                //G = (int) sqr1(sq1(xg) + sq1(yg));
+                //B = (int) sqr1(sq1(xb) + sq1(yb));
+                
+                R = (int) (Math.sqrt((xr*xr) + (yr*yr)));
+                G = (int) (Math.sqrt((xg*xg) + (yg*yg)));
+                B = (int) (Math.sqrt((xb*xb) + (yb*yb)));
+                
 
                 // Limit the color intensities to a valid range.
                 if (R > 255) {

@@ -58,8 +58,8 @@ public class Bitmap {
         readBitmapInfoHeader();
 
         // Print out header information
-        //printBitmapHeader();
-        //printBitmapInfoHeader();
+        printBitmapHeader();
+        printBitmapInfoHeader();
 
         try {
             int k = 0;
@@ -69,7 +69,7 @@ public class Bitmap {
             data = new byte[bitmapHeight][bitmapWidth][3];
             
             for (i = 0; i < bitmapHeight; i++) {
-                data[i] = new byte[bitmapWidth][];
+                data[i] = new byte[bitmapWidth][3];
                 for (j = 0; j < bitmapWidth; j++) {
                     data[i][j] = new byte[3];
                     data[i][j][0] = bytes[k];
